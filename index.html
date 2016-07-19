@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<html><head>
     <meta charset="utf-8">
     <title>Anime Flick</title>
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
@@ -15,20 +13,119 @@
     <link rel="stylesheet" href="main.css">
     <script src="index.js"></script>
   </head>
-  <body>
+  <body class="">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html" id="header"><center>movieDb</center></a>
+        </div>
+          <ul class="nav navbar-nav">
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="library.html">Library</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+  <form class="navbar-form navbar-left">
+                  <div class="form-group is-empty">
+                    <input type="text" class="form-control col-md-8" placeholder="Search">
+                  </div>
+                </form>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a type="button" data-toggle="modal" data-target="#complete-dialog">Login</a></li>
+          </ul>
+      </div>
+    </nav>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-3"></div>
-        <div class="col-xs-6">
-          <div class="well well-lg">
-            <h1 class='pager'>Anime Flick</h1>
-            <p><button class="btn btn-primary" type="button" id="button_ani-search">Search Anime</button> //Find a way to make a form "poof" here</p> <!-- Find a way to make a form pop up to search it -->
-            <a href='about.html'> <button type="button" class='btn btn-info'>About Us</button> </a>
-            <a href='faq.html'><button type='button' class='btn btn-info'>FAQ</button></a>
+      <!-- Modal Login-->
+      <div id="complete-dialog" class="modal fade" tabindex="-1" style="display: none;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">Login</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group label-static has-error">
+                  <input type="email" class="form-control" id="i2" placeholder="Username">
+
+
+                </div>
+                      <div class="form-group label-static">
+
+                  <input type="email" class="form-control" id="i2" placeholder="Password">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Dismiss<div class="ripple-container"><div class="ripple ripple-on ripple-out" style="left: 72.6563px; top: 24px; transform: scale(10.875); background-color: rgb(0, 150, 136);"></div></div></button>
+            </div>
           </div>
         </div>
       </div>
+      <!--End Modal Login-->
+      <div class="row" style="padding: 30px 0px 0px 0px">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+          <div class="well well-lg">
+            <h1 class="pager">Anime Flick</h1>
+              <div class="row">
+                <div style="padding: 0px 0px 300px 0px">
+                <h2>Recent Releases</h2>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="bs-component">
+                      <div class="well well-lg">
+                        <h3>Movie 1</h3>
+                        <p>Poster <br><br><br><br><br><br><br><br><br><br>
+                          Description of movie <br>
+                          Description of movie <br>
+                          Description of movie <br>
+                          Description of movie <br>
+                          Director <br> <br>
+                          Ratings
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="bs-component">
+                      <div class="well well-lg">
+                        <h3>Movie 2</h3>
+                        <p>Poster <br><br><br><br><br><br><br><br><br><br>
+                          Description of movie <br>
+                          Description of movie <br>
+                          Description of movie <br>
+                          Description of movie <br>
+                          Director <br> <br>
+                          Ratings
+                        </p>
+                      </div>
+                      <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="bs-component">
+                      <div class="well well-lg">
+                        <h3>Movie 3</h3>
+                        <p>Poster <br><br><br><br><br><br><br><br><br><br>
+                        Description of movie <br>
+                        Description of movie <br>
+                        Description of movie <br>
+                        Description of movie <br>
+                        Director   <br> <br>
+                        Ratings
+                      </p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2"></div>
+      </div>
     </div>
     <p id=""></p>
-  </body>
-</html>
+
+
+
+</body></html>
