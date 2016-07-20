@@ -12,18 +12,18 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/bootstrap-material-design.min.css">
 		<script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/material.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/ripples.min.js"></script>
-		<link rel="stylesheet" href="main.css">
 	</head>
-	<body class="">
-    <nav class="navbar navbar-default navbar-fixed-top">
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="index.html" id="header"><center>movieDb</center></a>
         </div>
           <ul class="nav navbar-nav">
+						<li><a href='index.html'>Home</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="catalogue.html">Catalogue</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li class='active'><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             <form class="navbar-form navbar-left">
               <div class="form-group is-empty">
@@ -31,9 +31,10 @@
               </div>
             </form>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a type="button" data-toggle="modal" data-target="#complete-dialog">Login</a></li>
-          </ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a type="button" style="cursor:pointer;" data-toggle="modal" data-target="#complete-dialog">Login</a></li>
+						<li><a class='navbar-link' href='https://github.com/khaleelsyed/moviedb/tree/v0.1.1'>v0.1.1</a></li>
+					</ul>
       </div>
     </nav>
     <div class="container-fluid">

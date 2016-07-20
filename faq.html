@@ -15,28 +15,31 @@
     <link rel="stylesheet" href="main.css">
     <script src="faq.js"></script>
 	</head>
-	<body class="">
+	<body>
 		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="index.html" id="header"><center>movieDb</center></a>
-				</div>
-					<ul class="nav navbar-nav">
-						<li><a href="faq.html">FAQ</a></li>
-						<li><a href="catalogue.html">Catalogue</a></li>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Contact Us</a></li>
-						<form class="navbar-form navbar-left">
-							<div class="form-group is-empty">
-								<input type="text" class="form-control col-md-8" placeholder="Search">
-							</div>
-						</form>
-					</ul>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html" id="header"><center>movieDb</center></a>
+        </div>
+          <ul class="nav navbar-nav">
+						<li><a href='index.html'>Home</a></li>
+            <li class='active'><a href="faq.html">FAQ</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <form class="navbar-form navbar-left">
+              <div class="form-group is-empty">
+                <input type="text" class="form-control col-md-8" placeholder="Search">
+              </div>
+            </form>
+          </ul>
+
 					<ul class="nav navbar-nav navbar-right">
-						<li><a type="button" data-toggle="modal" data-target="#complete-dialog">Login</a></li>
+						<li><a type="button" style="cursor:pointer;" data-toggle="modal" data-target="#complete-dialog">Login</a></li>
+						<li><a class='navbar-link' href='https://github.com/khaleelsyed/moviedb/tree/v0.1.1'>v0.1.1</a></li>
 					</ul>
-			</div>
-		</nav>
+      </div>
+    </nav>
 		<div class="container-fluid">
 			<!-- Modal Login-->
 			<div id="complete-dialog" class="modal fade" tabindex="-1" style="display: none;">
