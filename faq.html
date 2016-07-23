@@ -16,14 +16,66 @@
     <script src="faq.js"></script>
 	</head>
 	<body>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xs-4"></div>
-				<div class="col-xs-4">
-					<div class="well well-lg">
-						<h1>FAQ</h1>
-						<div class="">
+		<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html" id="header"><center>movieDb</center></a>
+        </div>
+          <ul class="nav navbar-nav">
+						<li><a href='index.html'>Home</a></li>
+            <li class='active'><a href="faq.html">FAQ</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <form class="navbar-form navbar-left">
+              <div class="form-group is-empty">
+                <input type="text" class="form-control col-md-8" placeholder="Search">
+              </div>
+            </form>
+          </ul>
 
+					<ul class="nav navbar-nav navbar-right">
+						<li><a type="button" style="cursor:pointer;" data-toggle="modal" data-target="#complete-dialog">Login</a></li>
+						<li><a class='navbar-link' href='https://github.com/khaleelsyed/moviedb/tree/v0.1.1'>v0.1.1</a></li>
+					</ul>
+      </div>
+    </nav>
+		<div class="container-fluid">
+			<!-- Modal Login-->
+			<div id="complete-dialog" class="modal fade" tabindex="-1" style="display: none;">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title">Login</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form-group label-static has-error">
+									<input type="text" class="form-control" id="i2" placeholder="Username">
+
+
+								</div>
+											<div class="form-group label-static">
+
+									<input type="password" class="form-control" id="i2" placeholder="Password">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal">LOGIN<div class="ripple-container"><div class="ripple ripple-on ripple-out" style="left: 72.6563px; top: 24px; transform: scale(10.875); background-color: rgb(0, 150, 136);"></div></div></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--End Modal Login-->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-2"></div>
+					<div class="col-xs-8">
+						<div class="well well-lg">
+							<h1 class="pager">FAQ</h1>
+							<div class="">
+
+							</div>
 						</div>
 					</div>
 				</div>

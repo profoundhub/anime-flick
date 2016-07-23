@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/bootstrap-material-design.min.css">
     <script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/material.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/ripples.min.js"></script>
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -20,19 +18,19 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="index.html" id="header"><center>movieDb</center></a>
         </div>
-          <ul class="nav navbar-nav" id='nav'>
-            <li class='active'><a href='index.html'>Home</a></li>
+          <ul class="nav navbar-nav">
+            <li><a href='index.html'>Home</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="catalogue.html">Catalogue</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li class='active'><a href="contact.html">Contact Us</a></li>
             <form class="navbar-form navbar-left">
               <div class="form-group is-empty">
                 <input type="text" class="form-control col-md-8" placeholder="Search">
               </div>
             </form>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
+					<ul class="nav navbar-nav navbar-right">
 						<li><a type="button" style="cursor:pointer;" data-toggle="modal" data-target="#complete-dialog">Login</a></li>
 						<li><a class='navbar-link' href='https://github.com/khaleelsyed/moviedb/tree/v0.1.1'>v0.1.1</a></li>
 					</ul>
@@ -48,7 +46,7 @@
               <h4 class="modal-title">Login</h4>
             </div>
             <div class="modal-body">
-              <div class="form-group label-static has-error">
+              <div class="form-group label-static">
                   <input type="text" class="form-control" id="i2" placeholder="Username">
                 </div>
                       <div class="form-group label-static">
@@ -62,53 +60,30 @@
         </div>
       </div>
       <!--End Modal Login-->
+      <div class="container-fluid">
       <div class="row" style="padding: 30px 0px 0px 0px">
         <div class="col-xs-2"></div>
         <div class="col-xs-8">
-          <div class="well well-lg" id='well_main'>
-            <h1 class="pager">Anime Flick</h1>
-              <div class="row">
-                <div style="padding: 0px 0px 300px 0px">
-                <h2>Recent Releases</h2>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="bs-component">
-                      <div class="well well-lg" id='well_mov'>
-                        <h3><em>Movie 1</em></h3>
-                          <img class='' src='http://placehold.it/200x300'>
-                          <p>Russian blue siamese and thai. Norwegian forest norwegian forest puma lynx jaguar jaguar bobcat. Egyptian mau siamese. Tom singapura norwegian forest for cheetah.</p>
-                          <h5>Director<h5>
-                          <h5>Ratings</h5>
-                      </div>
+          <div class="well well-lg">
+            <div class="">
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Contact Us</legend>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-md-2 control-label">Email</label>
+                    <div class="col-md-10">
+                      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
                     </div>
                   </div>
-                  <div class="col-md-4">
-                    <div class="bs-component">
-                      <div class="well well-lg" id='well_mov'>
-                        <h3><em>Movie 2</em></h3>
-                        <img class='' src='http://placehold.it/200x300'>
-                        <p>Panther tiger leopard, for abyssinian . Cornish rex ocelot or cornish rex yet lion but norwegian forest abyssinian russian blue. American shorthair tiger. Singapura.</p>
-                        <h5>Director<h5>
-                        <h5>Ratings</h5>
-                        </p>
-                      </div>
-                      <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+                  <div class="form-group">
+                    <label for="inputMessage" class="col-md-2 control-label">Message</label>
+                    <div class="col-md-10">
+                      <input type="text" class="form-control" id="inputMessage" placeholder="Message">
                     </div>
                   </div>
-                  <div class="col-md-4">
-                    <div class="bs-component">
-                      <div class="well well-lg" id='well_mov'>
-                        <h3><em>Movie 3</em></h3>
-                        <img class='' src='http://placehold.it/200x300'>
-                        <p>Russian blue siamese and thai. Norwegian forest norwegian forest puma lynx jaguar jaguar bobcat. Egyptian mau siamese. Tom singapura norwegian forest for cheetah.</p>
-                        <h5>Director<h5>
-                        <h5>Ratings</h5>
-                      </p></div>
-                    </div>
-                  </div>
-                <!--        //Add a carousel to above after API is sorted http://www.w3schools.com/bootstrap/bootstrap_ref_js_carousel.asp    -->
-                </div>
-              </div>
+                  <button type="submit" class="btn btn-primary">Submit<div class="ripple-container"><div class="ripple ripple-on ripple-out" style="left: 72.6563px; top: 24px; transform: scale(10.875); background-color: rgb(0, 150, 136);"></div></div></button>
+                </fieldset>
+              </form>
             </div>
           </div>
         </div>
