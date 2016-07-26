@@ -1,5 +1,7 @@
-<?php include('includes/arrays.php'); ?>
-
+<?php
+  include('includes/arrays.php');
+  $version='0.2.0';
+?>
 <html>
   <head>
     <meta charset="utf-8">
@@ -34,7 +36,7 @@
             </form>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-						<li><a class='navbar-link' href='https://github.com/khaleelsyed/moviedb/tree/v0.1.1'>v0.2.0</a></li>
+						<li><a class='navbar-link' href='https://github.com/khaleelsyed/moviedb/tree/v<?php echo($version); ?>'><?php echo($version); ?></a></li>
 					</ul>
       </div>
     </nav>
