@@ -1,0 +1,20 @@
+<?php
+	$pages=array(
+		array(
+			title=>'Home',
+			address=>'index.php'
+		),
+		array(
+			title=>'Catalogue',
+			address=>'catalogue.php'
+		),
+		array(
+			title=>'FAQ',
+			address=>'faq.php'
+		),
+		array(
+			title=>'About Us',
+			address=>'about.php'
+		)
+	);
+?>
