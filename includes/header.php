@@ -1,6 +1,6 @@
 <?php
   include('includes/arrays.php');
-  $version='0.2.0';
+  $version='0.2.1';
 ?>
 <html>
   <head>
@@ -15,9 +15,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/bootstrap-material-design.min.css">
     <script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/material.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/ripples.min.js"></script>
-    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="main.css">
-    <script src="index.js"></script>
+    <script src="main.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
