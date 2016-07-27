@@ -1,34 +1,42 @@
 $.material.init();
 $(document).ready(function(){
-	//console.log("Works");
+	page=1;
+	$('#navig').hide();
 	$("#button").click(function(){
+		$('#result').html('');
 		if($("#radioMovie").prop("checked")){
-			url='http://www.omdbapi.com/?type=movie&plot=full&t='+$("#queryName").val();
 			if($(queryYear).val()===""){
+				url='http://www.omdbapi.com/?&type=movie&s='+$("#queryName").val()+'&page='+page;
 				$.getJSON(url,function(data){
-					$('#name').html("<h5>Movie: </h5><p>"+data.Title+"</p>");
-					$('#genre').html("<h5>Genre: </h5><p>"+data.Genre+"</p>");
-					$('#year').html("<h5>Year: </h5><p>"+data.Year+"</p>");
-					$('#releaseDate').html("<h5>Release Year: </h5><p>"+data.Released+"</p>");
-					$('#runtime').html("<h5>Runtime: </h5><p>"+data.Runtime+"</p>");
-					$('#rating').html("<h5>imDB Rating: </h5><p>"+data.imdbRating+"</p>");
-					$('#plot').html("<h5>imDB Rating: </h5><p>"+data.Plot+"</p>");
+					if(data.Response==="True"){
+						for(i=0;i<10;i++){
+							$('#result').append("<div class='panel panel-default'><div class='panel-heading'>"+data.Search[i].Title+" ("+data.Search[i].Year+")</div>");
+							$('#result').append('<div class="panel-body"><img src='+data.Search[i].Poster+'></div></div>');
+							$("#result").append("<hr>");
+						}
+						$('#navig').show();
+					}else{
+						$('#result').html('<div class="alert alert-warning"><strong>Oh snap!</strong> We couldn\'t find any search results. Please try using a different search term.</div>');
+					}
 				});
 			}else{
-				url='http://www.omdbapi.com/?type=movie&plot=full&t='+$("#queryName").val()+"&y="+$("#queryYear").val();
+				url='http://www.omdbapi.com/?type=movie&s='+$("#queryName").val()+'&y='+$("#queryYear").val();
 				$.getJSON(url,function(data){
-					$('#name').html("<h5>Movie: </h5><p>"+data.Title+"</p>");
-					$('#genre').html("<h5>Genre: </h5><p>"+data.Genre+"</p>");
-					$('#year').html("<h5>Year: </h5><p>"+data.Year+"</p>");
-					$('#releaseDate').html("<h5>Release Year: </h5><p>"+data.Released+"</p>");
-					$('#runtime').html("<h5>Runtime: </h5><p>"+data.Runtime+"</p>");
-					$('#rating').html("<h5>imDB Rating: </h5><p>"+data.imdbRating+"</p>");
-					$('#plot').html("<h5>imDB Rating: </h5><p>"+data.Plot+"</p>");
+					if(data.Response==="True"){
+						for(i=0;i<10;i++){
+							$('#result').append("<div class='panel panel-default'><div class='panel-heading'>"+data.Search[i].Title+" ("+data.Search[i].Year+")</div>");
+							$('#result').append('<div class="panel-body"><img src='+data.Search[i].Poster+'></div></div>');
+							$("#result").append("<hr>");
+						}
+						$('#navig').show();
+					}else{
+						$('#result').html('<div class="alert alert-warning"><strong>Oh snap!</strong> We couldn\'t find any search results. Please try using a different search term.</div>');
+					}
 				});
 			}
 		}
 		if($("#radioSeries").prop("checked")){
-			alert("Search is not currently available for TV Series");
+			$('#result').html('<div class="alert alert-warning"><strong>Sorry!</strong> You can\'t search for TV Series just yet.</div>');
 		}
 	});
 });
