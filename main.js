@@ -1,11 +1,23 @@
 $.material.init();
+var page,i,url='';
 $(document).ready(function(){
-	page=1;
 	$('#navig').hide();
 	$("#button").click(function(){
+		page=1;
+		search();
+	});
+	$('#previous').click(function(){
+		page--;
+		search();
+	});
+	$('#next').click(function(){
+		page++;
+		search();
+	});
+	function search(){
 		$('#result').html('');
 		if($("#radioMovie").prop("checked")){
-			if($(queryYear).val()===""){
+			if($('#queryYear').val()===""){
 				url='http://www.omdbapi.com/?&type=movie&s='+$("#queryName").val()+'&page='+page;
 				$.getJSON(url,function(data){
 					if(data.Response==="True"){
@@ -38,5 +50,5 @@ $(document).ready(function(){
 		if($("#radioSeries").prop("checked")){
 			$('#result').html('<div class="alert alert-warning"><strong>Sorry!</strong> You can\'t search for TV Series just yet.</div>');
 		}
-	});
+	}
 });

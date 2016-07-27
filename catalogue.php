@@ -21,7 +21,7 @@
 <ul class="pager" id='navig'>
 		<li class="previous"><a class='withripple' href="javascript:void(0)">← Older</a></li>
 		<li><---------- I still need to get these buttons to work ----------></li>
-		<li class="next"><a class="withripple" href="javascript:pageAdd()">Newer →</a></li>
+		<li class="next"><a class="withripple" href="javascript:void(0)">Newer →</a></li>
 </ul>
 
 <?php include('includes/footer.php'); ?>
