@@ -1,6 +1,6 @@
-$.material.init();
-var page,i,url='';
 $(document).ready(function(){
+	$.material.init();
+	var page,i,url='';
 	$('#navig').hide();
 	$("#button").click(function(){
 		page=1;
