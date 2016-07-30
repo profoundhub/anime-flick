@@ -22,7 +22,7 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="index.php" id="header"><center>movieDb</center></a>
+          <a class="navbar-brand" href="index.php" id="header"><center>Anime Flick</center></a>
         </div>
           <ul class="nav navbar-nav" id='nav'>
             <?php foreach($pages as $page){ ?>
