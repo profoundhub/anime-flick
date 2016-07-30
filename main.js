@@ -7,8 +7,12 @@ $(document).ready(function(){
 		search();
 	});
 	$('#previous').click(function(){
-		page--;
-		search();
+		if(page>1){
+			page--;
+			search();
+		}else{
+			alert("Can't list any further previous results.");
+		}
 	});
 	$('#next').click(function(){
 		page++;
@@ -16,6 +20,7 @@ $(document).ready(function(){
 	});
 	function search(){
 		$('#result').html('');
+		$('#page').html("Page: "+page);
 		if($("#radioMovie").prop("checked")){
 			if($('#queryYear').val()===""){
 				url='http://www.omdbapi.com/?&type=movie&s='+$("#queryName").val()+'&page='+page;
@@ -23,7 +28,11 @@ $(document).ready(function(){
 					if(data.Response==="True"){
 						for(i=0;i<10;i++){
 							$('#result').append("<div class='panel panel-default'><div class='panel-heading'>"+data.Search[i].Title+" ("+data.Search[i].Year+")</div>");
-							$('#result').append('<div class="panel-body"><img src='+data.Search[i].Poster+'></div></div>');
+							if(data.Search[i].Poster!=="N/A"){
+								$('#result').append('<div class="panel-body"><img src='+data.Search[i].Poster+'></div></div>');
+							}else{
+								$('#result').append('<div class="panel-body"><h5>No Image available</h5></div></div>');
+							}
 							$("#result").append("<hr>");
 						}
 						$('#navig').show();
@@ -37,7 +46,11 @@ $(document).ready(function(){
 					if(data.Response==="True"){
 						for(i=0;i<10;i++){
 							$('#result').append("<div class='panel panel-default'><div class='panel-heading'>"+data.Search[i].Title+" ("+data.Search[i].Year+")</div>");
-							$('#result').append('<div class="panel-body"><img src='+data.Search[i].Poster+'></div></div>');
+							if(data.Search[i].Poster!=="N/A"){
+								$('#result').append('<div class="panel-body"><img src='+data.Search[i].Poster+'></div></div>');
+							}else{
+								$('#result').append('<div class="panel-body"><h5>No Image available</h5></div></div>');
+							}
 							$("#result").append("<hr>");
 						}
 						$('#navig').show();

@@ -1,5 +1,4 @@
 <?php include('includes/header.php'); ?>
-
 <h1 class="pager">Catalogue</h1>
 <form class="form-group">
 	<div class="input-group">
@@ -17,11 +16,11 @@
 	</div>
 </form>
 <h4>Results: </h4>
+<h7 id='page'></h7>
 <div class='pager' id='result'></div>
 <ul class="pager" id='navig'>
-		<li class="previous"><a class='withripple' href="javascript:void(0)">← Older</a></li>
-		<li><---------- I still need to get these buttons to work ----------></li>
-		<li class="next"><a class="withripple" href="javascript:void(0)">Newer →</a></li>
+		<li><button class='btn btn-info' id='previous'>← Previous</button></li>
+		<li><button class="btn btn-info" id='next'>Next →</button></li>
 </ul>
 
 <?php include('includes/footer.php'); ?>
