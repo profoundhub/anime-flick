@@ -3,11 +3,12 @@ $(document).ready(function(){
 	$('#navig').hide();				//Hides the Next/Prev buttons at start
 	$("#button").click(function(){
 		page=1;
+		maxPage=1;
 		url='';
 		search();
 	});
 											//Temporarily block the functions of the buttons
-	/*$('#previous').click(function(){
+	$('#previous').click(function(){
 		if(page>1){
 			page--;
 			search();
@@ -16,11 +17,13 @@ $(document).ready(function(){
 		}
 	});
 	$('#next').click(function(){
-		page++;
+		if(page<maxPage){
+			page++;
 		search();
+		}else{
+			alert("You've reached the last page.");
+		}
 	});
-	*/
-	/*												//Find a way to check if user has reached the last page */
 	function search(){
 		$('#result').html('');
 		$('#page').html("Page: "+page);
@@ -31,11 +34,13 @@ $(document).ready(function(){
 			url+=page;
 			url+='&api_key=';
 			url+=key;
-			$.getJSON(function(data){
-				if(data.total_results>0){
-					alert('valid');
-				}else{
-					alert('Invalid');
+			$.getJSON(url,function(data){
+				maxPage=data.total_pages;
+				for(i=0;i<data.results.length;i++){
+					$('#result').append("<div class='panel panel-default'><div class='panel-heading'>"+data.results[i].original_title+" ("+data.results[i].release_date+")</div>");
+					$('#result').append('<div class="panel-body"><img src="http://image.tmdb.org/t/p/w500/'+data.results[i].poster_path+'&api_key='+key+'"></div></div>');
+					$("#result").append("<hr>");
+					$('#navig').show();
 				}
 			});
 		}
