@@ -1,4 +1,10 @@
 <?php include('includes/header.php'); ?>
+
+<script type="text/javascript">
+  $("#catalogue").attr('class','active');
+</script>
+<script type="text/javascript" src="catalogue.js"></script>
+
 <h1 class="pager">Catalogue</h1>
 <form class="form-group">
 	<div class="input-group">

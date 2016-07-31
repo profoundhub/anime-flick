@@ -1,5 +1,9 @@
 <?php include('includes/header.php'); ?>
 
+<script type="text/javascript">
+  $('#index').attr('class','active');
+</script>
+
 <h1 class="pager">Anime Flick</h1>
 <div class="row">
   <div style="padding: 0px 0px 300px 0px">

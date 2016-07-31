@@ -2,19 +2,19 @@
 	$pages=array(
 		array(
 			title=>'Home',
-			address=>'index.php'
+			address=>'index'
 		),
 		array(
 			title=>'Catalogue',
-			address=>'catalogue.php'
+			address=>'catalogue'
 		),
 		array(
 			title=>'FAQ',
-			address=>'faq.php'
+			address=>'faq'
 		),
 		array(
 			title=>'About Us',
-			address=>'about.php'
+			address=>'about'
 		)
 	);
 ?>

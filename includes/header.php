@@ -1,6 +1,6 @@
 <?php
   include('includes/arrays.php');
-  $version='0.3.0';
+  $version='0.3.2';
 ?>
 <html>
   <head>
@@ -17,6 +17,9 @@
     <script src="//cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/ripples.min.js"></script>
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
+    <script type="text/javascript">
+      var key='75949cf5078ca46d2330f51fb2221e0f';
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -26,7 +29,7 @@
         </div>
           <ul class="nav navbar-nav" id='nav'>
             <?php foreach($pages as $page){ ?>
-            <li><a href="<?php echo $page[address]; ?>"><?php echo $page[title]; ?></a></li>
+            <li id="<?php echo $page[address]; ?>"><a href="<?php echo $page[address]; ?>.php"><?php echo $page[title]; ?></a></li>
             <?php } ?>
             <form class="navbar-form navbar-left">
               <div class="form-group is-empty">

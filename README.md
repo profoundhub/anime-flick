@@ -1,4 +1,4 @@
-# Movie Database
+# Anime Flick
 
 We're building a Web app to allow users to search and store a record of movies, series and anime that they've seen. Movie and TV series lists will be stored on our servers. We will utilise the MyAnimeList API to allow the user to make changes to their anime list content on MyAnimeList.
 

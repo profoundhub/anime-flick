@@ -11,10 +11,11 @@ In the following fasion: http://image.tmdb.org/t/p/[IMAGE_SIZE_HERE]/[IMAGE_PATH
 
 
 --------------------------
-http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key=
-IMPORTANT: https://www.themoviedb.org/about/logos-attribution
+
+- http://api.themoviedb.org/3/search/movie?query=batman&page=1&api_key=75949cf5078ca46d2330f51fb2221e0f
+- http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key=
+
+### IMPORTANT to include in footer: https://www.themoviedb.org/about/logos-attribution
 
 
 --------------------------
-
-# MyAnimeList
