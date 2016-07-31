@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$('#queryName').val('Batman');
 	var page,i,url='';				//Initialise the variables
 	$('#navig').hide();				//Hides the Next/Prev buttons at start
 	$("#button").click(function(){
@@ -7,7 +8,6 @@ $(document).ready(function(){
 		url='';
 		search();
 	});
-											//Temporarily block the functions of the buttons
 	$('#previous').click(function(){
 		if(page>1){
 			page--;
@@ -40,7 +40,7 @@ $(document).ready(function(){
 					$('#result').append("<div class='panel panel-default'><div class='panel-heading'>"+data.results[i].original_title+" ("+data.results[i].release_date+")</div>");
 					$('#result').append('<div class="panel-body"><img src="http://image.tmdb.org/t/p/w500/'+data.results[i].poster_path+'&api_key='+key+'"></div></div>');
 					$("#result").append("<hr>");
-					$('#navig').show();
+					$('#navig').show();			//Shows the Next/Prev buttons at start
 				}
 			});
 		}

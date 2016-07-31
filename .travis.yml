@@ -1,4 +1,8 @@
 language: php
+addons:
+  code_climate:
+    repo_token: 419ccab95e7dde19ce332a32f022f2a8084617b872d8afbf537c049709e582e6
+
 php:
   - '5.4'
   - '5.5'
