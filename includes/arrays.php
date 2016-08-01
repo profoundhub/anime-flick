@@ -5,8 +5,8 @@
 			address=>'index'
 		),
 		array(
-			title=>'Catalogue',
-			address=>'catalogue'
+			title=>'Search',
+			address=>'search'
 		),
 		array(
 			title=>'FAQ',

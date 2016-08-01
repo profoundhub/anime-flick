@@ -1,6 +1,6 @@
 <?php
   include('includes/arrays.php');
-  $version='0.3.4';
+  $version='0.3.5';
 ?>
 <html>
   <head>
@@ -31,11 +31,6 @@
             <?php foreach($pages as $page){ ?>
             <li id="<?php echo $page[address]; ?>"><a href="<?php echo $page[address]; ?>.php"><?php echo $page[title]; ?></a></li>
             <?php } ?>
-            <form class="navbar-form navbar-left">
-              <div class="form-group is-empty">
-                <input type="text" class="form-control col-md-8" placeholder="<ADD CODE HERE>">
-              </div>
-            </form>
           </ul>
           <ul class="nav navbar-nav navbar-right">
 						<li class="label label-info"><a class='navbar-link' href='https://github.com/khaleelsyed/moviedb/tree/v<?php echo($version); ?>'>v<?php echo($version); ?></a></li>

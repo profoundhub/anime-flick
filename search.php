@@ -1,28 +1,28 @@
 <?php include('includes/header.php'); ?>
 
 <script type="text/javascript">
-  $("#catalogue").attr('class','active');
+  $("#search").attr('class','active');
 </script>
-<script type="text/javascript" src="catalogue.js"></script>
+<script type="text/javascript" src="search.js"></script>
 
-<h1 class="pager">Catalogue</h1>
-<form>
-	<div class="input-group form-group">
+<h1 class="pager">Search</h1>
+<div>
+	<div class="form-group input-group">
 		<input type='text' class="form-control box-q" id='queryName' placeholder='Name'>
   </div>
-  <div class="input-group form-group">
+  <div class="form-group input-group">
 		<input type="text" class="form-control is-empty box-q" id='queryYear' placeholder="Year">
 	</div>
 	<button class="btn btn-primary" type="button" id="button">Search</button>
-	<div class="row">
-		<div class="col-xs-2">
+  <div class="row">
+	  <div class="col-xs-2">
 			<label><input type="radio" name="select" value="movie" checked='' id="radioMovie"> Movie</label>
 		</div>
 		<div class="col-xs-4">
 			<label><input type="radio" name="select" value="series" id="radioSeries"> TV Series</label>
 		</div>
 	</div>
-</form>
+</div>
 <h4>Results: </h4>
 <h7 id='page'></h7>
 <div class='pager' id='result'></div>
