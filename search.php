@@ -1,4 +1,7 @@
-<?php include('includes/header.php'); ?>
+<?php
+  define("TITLE", "Search|");
+  include('includes/header.php');
+?>
 
 <script type="text/javascript">
   $("#search").attr('class','active');

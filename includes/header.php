@@ -1,21 +1,23 @@
 <?php
   include('includes/arrays.php');
-  $version='0.3.5';
+  include('includes/version.php');
 ?>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Anime Flick</title>
-    <script src="//code.jquery.com/jquery-2.2.4.js"></script>
+    <title><?php echo TITLE; ?>Anime Flick</title>
+    <!--          //Make sure not to insert the http or https protocol within the CDN as HerokuApp might break! -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/ripples.min.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="//code.jquery.com/jquery-2.2.4.js"></script>
     <script src="//cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/material.min.js"></script>
     <script src="//cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/ripples.min.js"></script>
-    <link rel="stylesheet" href="main.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
     <script src="main.js"></script>
     <script type="text/javascript">
       var key='75949cf5078ca46d2330f51fb2221e0f';
@@ -33,7 +35,7 @@
             <?php } ?>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-						<li class="label label-info"><a class='navbar-link' href='https://github.com/khaleelsyed/moviedb/tree/v<?php echo($version); ?>'>v<?php echo($version); ?></a></li>
+						<li class="label label-info"><a class='navbar-link' href='<?php echo($versionlink); ?>' target='_blank'><?php echo("v".$version." "); ?><i class="fa fa-3x fa-github" aria-hidden="true"></i></a></li>
 					</ul>
       </div>
     </nav>

@@ -1,4 +1,7 @@
-<?php include('includes/header.php'); ?>
+<?php
+  define("TITLE", "About Us|");
+  include('includes/header.php');
+?>
 
 <script type="text/javascript">
   $("#about").attr('class','active');

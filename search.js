@@ -1,14 +1,25 @@
 $(document).ready(function(){
-	$('#queryName').val('Batman');
 	var page,maxPage,i,url;				//Initialise the variables
 	$('#navig').hide();				//Hides the Next/Prev buttons at start
-	$("#button").click(function(){
+	$("#button").click(function(){			//Initialises search on click of SEARCH
 		page=1;
 		maxPage=1;
 		url='';
 		search();
 	});
-	$('#previous').click(function(){
+	$('#queryName').keypress(function(e){			//Initialises search as NAME is being entered
+		page=1;
+		maxPage=1;
+		url='';
+		search();
+	});
+	$('#queryYear').keypress(function(e){			//Initialises search as YEAR is being entered
+		page=1;
+		maxPage=1;
+		url='';
+		search();
+	});
+	$('#previous').click(function(){		//Previous Button
 		if(page>1){
 			page--;
 			search();
@@ -16,7 +27,7 @@ $(document).ready(function(){
 			alert("Can't list any further previous results.");
 		}
 	});
-	$('#next').click(function(){
+	$('#next').click(function(){		//Next Button
 		if(page<maxPage){
 			page++;
 		search();
@@ -24,45 +35,106 @@ $(document).ready(function(){
 			alert("You've reached the last page.");
 		}
 	});
-	function search(){
+	function search(){				//The search function called from the above respective functions
 		$('#result').html('');
-		$('#page').html("Page: "+page);
-		if($("#radioMovie").prop("checked")){				//Code to search for Movies
-			url+='http://api.themoviedb.org/3/search/movie?query=';
-			url+=$('#queryName').val();
-			url+='&page=';
-			url+=page;
-			url+='&api_key=';
-			url+=key;
-			$.getJSON(url,function(data){
-				maxPage=data.total_pages;
-				for(i=0;i<data.results.length;i++){
-					$('#result').append("<div class='panel panel-default'><div class='panel-heading'>"+data.results[i].original_title+" ("+data.results[i].release_date.substring(0,4)+")</div>");
-					$('#result').append('<div class="panel-body"><img id="mov'+data.results[i].id+'" src="http://image.tmdb.org/t/p/w500/'+data.results[i].poster_path+'&api_key='+key+'"></div></div>');
-					$('#mov'+data.results[i].id).wrap($('<div>').attr('data-toggle','modal').attr('data-target','#modal'+data.results[i].id));
-					$('#result').append('<div id="modal'+data.results[i].id+'" class="modal fade" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h2 class="modal-title">'+data.results[i].original_title+' ('+data.results[i].release_date.substring(0,4)+')</h2></div><div class="modal-body"><img src="http://image.tmdb.org/t/p/w150/'+data.results[i].poster_path+'&api_key='+key+'"><hr><p>'+data.results[i].overview+'</p><br><p><em>Release date: '+data.results[i].release_date);
-					$('#result').append('</em></p></div></div>');
-					$("#result").append("<hr>");
-					$('#navig').show();			//Shows the Next/Prev buttons at start
-				}
-			});
+		if($("#radioMovie").prop("checked")){
+			$('#queryYear').show();
+			if($("#queryYear").val()===""){				//If MOVIE year IS empty
+				url+='http://api.themoviedb.org/3/search/movie?query=';
+				url+=$('#queryName').val();
+				url+='&page=';
+				url+=page;
+				url+='&api_key=';
+				url+=key;
+				$.getJSON(url,function(data){
+					maxPage=data.total_pages;
+					$('#page').html("Page: "+page+" of "+maxPage);
+					for(i=0;i<data.results.length;i++){
+						$('#result').append("<div class='panel panel-default'><div class='panel-heading'>"+data.results[i].original_title+" ("+data.results[i].release_date.substring(0,4)+")</div>");
+						$('#result').append('<div class="panel-body"><img id="mov'+data.results[i].id+'" src="http://image.tmdb.org/t/p/w500/'+data.results[i].poster_path+'&api_key='+key+'"></div></div>');
+						$('#mov'+data.results[i].id).wrap($('<div>').attr('data-toggle','modal').attr('data-target','#movie'+data.results[i].id));
+						$('#result').append('<div id="movie'+data.results[i].id+'" class="modal fade" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h2 class="modal-title">'+data.results[i].original_title+' ('+data.results[i].release_date.substring(0,4)+')</h2></div><div class="modal-body"><img src="http://image.tmdb.org/t/p/w150/'+data.results[i].poster_path+'&api_key='+key+'"><hr><p>'+data.results[i].overview+'</p></div><div class="modal-footer"><em>Release date: '+data.results[i].release_date);
+						$('#result').append('</em>');
+						$('#result').append('</div></div></div></div>');
+						$("#result").append("<hr>");
+						$('#navig').show();			//Shows the Next/Prev buttons at start
+					}
+				});
+			}
+			if($("#queryYear").val()!==""){				//If MOVIE year is NOT empty
+				url+='http://api.themoviedb.org/3/search/movie?query=';
+				url+=$('#queryName').val();
+				url+='&page=';
+				url+=page;
+				url+='&year=';
+				url+=$('#queryYear').val();
+				url+='&api_key=';
+				url+=key;
+				$.getJSON(url,function(data){
+					maxPage=data.total_pages;
+					$('#page').html("Page: "+page+" of "+maxPage);
+					for(i=0;i<data.results.length;i++){
+						$('#result').append("<div class='panel panel-default'><div class='panel-heading'>"+data.results[i].original_title+" ("+data.results[i].release_date.substring(0,4)+")</div>");
+						$('#result').append('<div class="panel-body"><img id="mov'+data.results[i].id+'" src="http://image.tmdb.org/t/p/w500/'+data.results[i].poster_path+'&api_key='+key+'"></div></div>');
+						$('#mov'+data.results[i].id).wrap($('<div>').attr('data-toggle','modal').attr('data-target','#movie'+data.results[i].id));
+						$('#result').append('<div id="movie'+data.results[i].id+'" class="modal fade" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h2 class="modal-title">'+data.results[i].original_title+' ('+data.results[i].release_date.substring(0,4)+')</h2></div><div class="modal-body"><img src="http://image.tmdb.org/t/p/w150/'+data.results[i].poster_path+'&api_key='+key+'"><hr><p>'+data.results[i].overview+'</p></div><div class="modal-footer"><em>Release date: '+data.results[i].release_date);
+						$('#result').append('</em>');
+						$('#result').append('</div></div></div></div>');
+						$("#result").append("<hr>");
+						$('#navig').show();			//Shows the Next/Prev buttons at start
+					}
+				});
+			}
 		}
 		if($("#radioSeries").prop("checked")){				//Code to search for TV Series
-			url+='http://api.themoviedb.org/3/search/tv?query=';
-			url+=$('#queryName').val();
-			url+='&page=';
-			url+=page;
-			url+='&api_key=';
-			url+=key;
-			$.getJSON(url,function(data){
-				maxPage=data.total_pages;
-				for(i=0;i<data.results.length;i++){
-					$('#result').append("<div class='panel panel-default'><div class='panel-heading'>"+data.results[i].original_name+" ("+data.results[i].first_air_date.substring(0,4)+")</div>");
-					$('#result').append('<div class="panel-body"><img src="http://image.tmdb.org/t/p/w500/'+data.results[i].poster_path+'&api_key='+key+'"></div></div>');
-					$("#result").append("<hr>");
-					$('#navig').show();			//Shows the Next/Prev buttons at start
-				}
-			});
+			$('#queryYear').hide();
+			if($("#queryYear").val()===""){				//If SERIES year IS empty
+				url+='http://api.themoviedb.org/3/search/tv?query=';
+				url+=$('#queryName').val();
+				url+='&page=';
+				url+=page;
+				url+='&api_key=';
+				url+=key;
+				$.getJSON(url,function(data){
+					maxPage=data.total_pages;
+					for(i=0;i<data.results.length;i++){
+						$('#result').append("<div class='panel panel-default'><div class='panel-heading'>"+data.results[i].original_name+" ("+data.results[i].first_air_date.substring(0,4)+")</div>");
+						$('#result').append('<div class="panel-body"><img id="tv'+data.results[i].id+'" src="http://image.tmdb.org/t/p/w500/'+data.results[i].poster_path+'&api_key='+key+'"></div></div>');
+						$('#tv'+data.results[i].id).wrap($('<div>').attr('data-toggle','modal').attr('data-target','#series'+data.results[i].id));
+						$('#result').append('<div id="series'+data.results[i].id+'" class="modal fade" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h2 class="modal-title">'+data.results[i].original_name+'</h2></div><div class="modal-body"><img src="http://image.tmdb.org/t/p/w150/'+data.results[i].poster_path+'&api_key='+key+'"><hr><p>'+data.results[i].overview+'</p></div><div class="modal-footer"><em>Initial Air Date: '+data.results[i].first_air_date);
+						$('#result').append('</em>');
+						$('#result').append('</div></div></div></div>');
+						$("#result").append("<hr>");
+						$('#navig').show();			//Shows the Next/Prev buttons at start
+					}
+				});
+			}
+			if($("#queryYear").val()!==""){				//If SERIES year is NOT empty
+			/*
+				url+='http://api.themoviedb.org/3/search/tv?query=';
+				url+=$('#queryName').val();
+				url+='&page=';
+				url+=page;
+				url+='&first_air_date_year=';
+				url+=$('#queryYear').val();
+				url+='&api_key=';
+				url+=key;
+				$.getJSON(url,function(data){
+					maxPage=data.total_pages;
+					for(i=0;i<data.results.length;i++){
+						$('#result').append("<div class='panel panel-default'><div class='panel-heading'>"+data.results[i].original_name+" ("+data.results[i].first_air_date.substring(0,4)+")</div>");
+						$('#result').append('<div class="panel-body"><img id="tv'+data.results[i].id+'" src="http://image.tmdb.org/t/p/w500/'+data.results[i].poster_path+'&api_key='+key+'"></div></div>');
+						$('#tv'+data.results[i].id).wrap($('<div>').attr('data-toggle','modal').attr('data-target','#series'+data.results[i].id));
+						$('#result').append('<div id="series'+data.results[i].id+'" class="modal fade" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h2 class="modal-title">'+data.results[i].original_name+'</h2></div><div class="modal-body"><img src="http://image.tmdb.org/t/p/w150/'+data.results[i].poster_path+'&api_key='+key+'"><hr><p>'+data.results[i].overview+'</p></div><div class="modal-footer"><em>Initial Air Date: '+data.results[i].first_air_date);
+						$('#result').append('</em>');
+						$('#result').append('</div></div></div></div>');
+						$("#result").append("<hr>");
+						$('#navig').show();			//Shows the Next/Prev buttons at start
+					}
+				});
+			*/
+			alert('Searching by year is temporarily blocked off');
+			}
 		}
 	}
 });
