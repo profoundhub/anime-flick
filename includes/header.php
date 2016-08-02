@@ -1,4 +1,5 @@
 <?php
+  include('analyticstracking.php');
   include('includes/arrays.php');
   include('includes/version.php');
 ?>
