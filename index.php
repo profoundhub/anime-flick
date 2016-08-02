@@ -14,6 +14,6 @@
 </p>
 <br>
 <p class='text-warning'>
-  Anime Flick is still under development, but in the meantime our Movie <a href='search.php'><strong>Search</strong></a> functionality is in tip top shape.
+  Anime Flick is still under development, but in the meantime our <a href='search.php'><strong>Search</strong></a> functionality is in shape.
 </p>
 <?php include('includes/footer.php'); ?>
