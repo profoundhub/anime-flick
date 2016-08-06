@@ -11,10 +11,10 @@
 <h1 class="pager">Search</h1>
 <div>
 	<div class="form-group input-group">
-		<input type='text' class="form-control box-q" id='queryName' placeholder='Name'>
+		<input type='text' class="form-control textBox" id='queryName' placeholder='Name'>
   </div>
   <div class="form-group input-group">
-		<input type="text" class="form-control is-empty box-q" id='queryYear' placeholder="Year">
+		<input type="text" class="form-control is-empty textBox" id='queryYear' placeholder="Year">
 	</div>
 	<button class="btn btn-primary" type="button" id="button">Search</button>
   <div class="row">
