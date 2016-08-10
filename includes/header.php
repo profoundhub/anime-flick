@@ -20,7 +20,6 @@
     </script>
   </head>
   <body>
-		<div class="wrapper">
 	    <nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
 	      <div class="container-fluid">
 	        <div class="navbar-header">

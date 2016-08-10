@@ -14,13 +14,10 @@
   font-size: 25px;
 }
 #headr{
-	height: 500px;
-	padding-top: 100px;
-	background-size: cover;
-	background-position: center center;
+	height: 300px;
+	padding-top: 70px;
 }
 #main_header{
-	font-size: 16px;
   color: #FFF;
   line-height: 18px;
   float: left;

@@ -92,7 +92,7 @@ $(document).ready(function(){
 						$('#result').append("<div class='panel panel-default'><div class='panel-heading'>"+data.results[i].original_title+" ("+data.results[i].release_date.substring(0,4)+")</div>");
 						$('#result').append('<div class="panel-body"><img id="mov'+data.results[i].id+'" src="'+posterPath[i]+'"></div></div>');
 						$('#mov'+data.results[i].id).wrap($('<div>').attr('data-toggle','modal').attr('data-target','#movie'+data.results[i].id));
-						$('#result').append('<div id="movie'+data.results[i].id+'" class="modal fade" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h2 class="modal-title">'+data.results[i].original_title+' ('+data.results[i].release_date.substring(0,4)+')</h2></div><div class="modal-body"><img src="'+posterPath[i]+'"><hr><p>'+data.results[i].overview+'</p></div><div class="modal-footer"><em>Release date: '+data.results[i].release_date);
+						$('#result').append('<div id="movie'+data.results[i].id+'" class="modal fade" role="dialog" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h2 class="modal-title">'+data.results[i].original_title+' ('+data.results[i].release_date.substring(0,4)+')</h2></div><div class="modal-body"><img src="'+posterPath[i]+'"><hr><p>'+data.results[i].overview+'</p></div><div class="modal-footer"><em>Release date: '+data.results[i].release_date);
 						$('#result').append('</em>');
 						$('#result').append('</div></div></div></div>');
 						$("#result").append("<hr>");
