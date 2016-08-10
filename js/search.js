@@ -85,7 +85,7 @@ $(document).ready(function(){
 				valueCatch();
 				yearCatch();
 				$.getJSON(url,function(data){
-					imageCatch();
+					imageCatch(data);
 					maxPage=data.total_pages;
 					$('#page').html("Page: "+page+" of "+maxPage);
 					for(i=0;i<data.results.length;i++){

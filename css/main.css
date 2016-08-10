@@ -1,0 +1,30 @@
+#well_main{
+  margin-top: 80px;
+}
+.textBox{
+  width: 70%;
+}
+#well_mov{
+  margin-top: 35px;
+}
+.text_big{
+  font-size: 18px;
+}
+.text_large{
+  font-size: 25px;
+}
+#headr{
+	height: 500px;
+	padding-top: 100px;
+	background-size: cover;
+	background-position: center center;
+}
+#main_header{
+	font-size: 16px;
+  color: #FFF;
+  line-height: 18px;
+  float: left;
+  margin-top: 7px;
+  height: 40px;
+  text-align: left;
+}

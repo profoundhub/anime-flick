@@ -3,12 +3,8 @@
   include('includes/header.php');
 ?>
 
-<script type="text/javascript">
-  $("#search").attr('class','active');
-</script>
-<script type="text/javascript" src="search.js"></script>
 
-<h1 class="pager">Search</h1>
+<h1 class="text-center">Search</h1>
 <div>
 	<div class="form-group input-group">
 		<input type='text' class="form-control textBox" id='queryName' placeholder='Name'>
@@ -18,10 +14,10 @@
 	</div>
 	<button class="btn btn-primary" type="button" id="button">Search</button>
   <div class="row">
-	  <div class="col-xs-2">
-			<label><input type="radio" name="select" value="movie" checked='' id="radioMovie"> Movie</label>
+	  <div class="radio">
+			<label><input type="radio" name="select" value="movie" checked="true" id="radioMovie"> Movie</label>
 		</div>
-		<div class="col-xs-4">
+		<div class="radio">
 			<label><input type="radio" name="select" value="series" id="radioSeries"> TV Series</label>
 		</div>
 	</div>
@@ -36,4 +32,9 @@
 		<li><button class="btn btn-info" id='next'>Next →</button></li>
 </ul>
 
+<?php include('includes/scriptcall.php'); ?>
+<script type="text/javascript">
+  $("#search").attr('class','active');
+</script>
+<script type="text/javascript" src="js/search.js"></script>
 <?php include('includes/footer.php'); ?>
