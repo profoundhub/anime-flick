@@ -7,6 +7,10 @@ $(document).ready(function(){
 		url='';
 		search();
 	});
+	function foo() {
+    var alert = myCustomLib.customAlert;
+    alert();
+	}
 	$('#queryName').keypress(function(e){			//Initialises search as NAME is being entered
 		page=1;
 		maxPage=1;
@@ -28,7 +32,7 @@ $(document).ready(function(){
 			page--;
 			search();
 		}else{
-			alert("Can't list any further previous results.");
+			customAlert("Can't list any further previous results.");
 		}
 	});
 	$('#next').click(function(){		//Next Button

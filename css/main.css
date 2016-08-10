@@ -25,3 +25,10 @@
   height: 40px;
   text-align: left;
 }
+.modal-open .modal{
+	position: fixed !important;
+	z-index: 99 !important;
+}
+.modal-backdrop.in{
+	position: static;
+}
