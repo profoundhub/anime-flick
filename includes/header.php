@@ -1,8 +1,4 @@
-<?php
-  include('includes/analyticstracking.php');
-  include('includes/arrays.php');
-  include('includes/version.php');
-?>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -19,6 +15,11 @@
       var key='75949cf5078ca46d2330f51fb2221e0f';
     </script>
   </head>
+	<?php
+	  include('includes/analyticstracking.php');
+	  include('includes/arrays.php');
+	  include('includes/version.php');
+	?>
   <body>
 	    <nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
 	      <div class="container-fluid">
