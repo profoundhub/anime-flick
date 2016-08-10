@@ -3,13 +3,7 @@
   include('includes/header.php');
 ?>
 
-<script type="text/javascript">
-  $("#faq").attr('class','active');
-  $(function () {
-    $("[data-toggle='tooltip']").tooltip();
-  });
-</script>
-<h1 class="pager">FAQ</h1>
+<h1 class="text-center">FAQ</h1>
 <br>
 
 <h3>Q: What does Anime Flick aim to do?</h3>
@@ -32,4 +26,8 @@
 <h3>Q: Where can I see the progress of your development?</h3>
       We're open sourcing the code of our web app on a <a href=''>GitHub repository</a>. We also have a public <a href='https://trello.com/b/O9I2YLuO/anime-flick' target='_blank'>Trello Board</a>.
 
+<?php include('includes/scriptcall.php'); ?>
+<script type="text/javascript">
+  $("#faq").attr('class','active');
+</script>
 <?php include('includes/footer.php'); ?>
